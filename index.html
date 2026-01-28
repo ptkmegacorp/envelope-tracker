@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IMB Envelope Tracking</title>
+    <link rel="stylesheet" href="assets/app.css" />
+  </head>
+  <body data-page="index">
+    <main>
+      <header>
+        <div class="brand">
+          <span class="brand-badge">IMB POC</span>
+          <div>
+            <h1>Envelope Tracking Batch Builder</h1>
+            <p>Paste or upload IMB codes, dedupe, and create a shareable batch.</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid two">
+        <div class="panel">
+          <label for="imb-input">IMB Codes</label>
+          <textarea id="imb-input" placeholder="Paste newline or CSV-separated IMB codes..."></textarea>
+
+          <div style="height: 12px"></div>
+          <label for="file-input">Upload CSV or TXT</label>
+          <input id="file-input" type="file" accept=".csv,.txt" />
+
+          <div class="footer">We trim, drop empties, and dedupe. Invalid formats are flagged, not blocked.</div>
+        </div>
+
+        <div class="panel">
+          <label for="source-input">Source Platform (optional)</label>
+          <input id="source-input" type="text" placeholder="e.g. Mailroom v2" />
+
+          <div style="height: 12px"></div>
+          <label for="note-input">Note (optional)</label>
+          <input id="note-input" type="text" placeholder="Batch note" />
+
+          <div style="height: 16px"></div>
+          <div class="callout" id="summary">Waiting for IMBs...</div>
+          <div style="height: 8px"></div>
+          <div id="warnings" class="meta"></div>
+          <div style="height: 16px"></div>
+          <div class="actions">
+            <button id="create-btn" disabled>Create Batch</button>
+            <span id="status-message" class="meta"></span>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">Backend API is configurable via <code>window.API_BASE</code> for local dev.</div>
+    </main>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>

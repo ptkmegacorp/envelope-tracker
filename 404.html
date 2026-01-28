@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting...</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 40px 20px;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      a {
+        color: #38bdf8;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Redirecting...</h1>
+        <p>If you are not redirected, <a id="fallback-link" href="index.html">go home</a>.</p>
+      </section>
+    </main>
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+
+        function basePath() {
+          var idx = path.indexOf("/b/");
+          if (idx >= 0) {
+            return path.slice(0, idx + 1);
+          }
+          if (path.endsWith("/")) return path;
+          var lastSlash = path.lastIndexOf("/");
+          if (lastSlash >= 0) return path.slice(0, lastSlash + 1);
+          return "/";
+        }
+
+        var base = basePath();
+        var match = path.split("/b/")[1];
+        if (match) {
+          var batchId = match.split("/")[0];
+          var querySuffix = search ? "&" + search.replace(/^\?/, "") : "";
+          var target =
+            base +
+            "batch.html?id=" +
+            encodeURIComponent(batchId) +
+            querySuffix +
+            hash;
+          window.location.replace(target);
+          document.getElementById("fallback-link").href = target;
+          return;
+        }
+
+        var home = base + "index.html" + search + hash;
+        window.location.replace(home);
+        document.getElementById("fallback-link").href = home;
+      })();
+    </script>
+  </body>
+</html>

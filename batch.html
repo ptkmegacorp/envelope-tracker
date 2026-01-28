@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IMB Batch</title>
+    <link rel="stylesheet" href="assets/app.css" />
+  </head>
+  <body data-page="batch">
+    <main>
+      <header>
+        <div class="brand">
+          <span class="brand-badge">IMB BATCH</span>
+          <div>
+            <h1 id="batch-title">Batch</h1>
+            <p id="batch-meta">Loading...</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="refresh-btn">Refresh</button>
+          <button id="copy-btn" class="secondary">Copy Share Link</button>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="flex" style="justify-content: space-between">
+          <div>
+            <label for="search-input">Search or filter</label>
+            <input id="search-input" type="text" placeholder="Filter by IMB or status" />
+          </div>
+          <div id="admin-panel" class="callout" style="display: none">
+            Admin mode enabled. Overrides will use your stored admin key.
+            <button id="clear-admin" class="secondary" style="margin-left: 12px">Clear</button>
+          </div>
+        </div>
+        <div id="table-wrap"></div>
+      </section>
+
+      <div class="footer" id="status-message"></div>
+    </main>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>

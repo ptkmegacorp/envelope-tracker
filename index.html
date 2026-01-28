@@ -14,16 +14,15 @@
           <h1 class="document-title">IMB Envelope Tracking</h1>
           <p class="document-subtitle">Batch Builder</p>
           <div class="bio">
-            Paste IMB codes or upload a CSV/txt file. We trim, drop empties, dedupe, and warn on invalid formats without blocking.
+            Paste IMB codes or upload a CSV/txt file.
           </div>
         </div>
       </header>
 
-      <h2 class="section-title">Batch Input</h2>
       <section class="form-grid">
         <div class="card">
           <label for="imb-input">IMB Codes</label>
-          <textarea id="imb-input" placeholder="Paste newline or CSV-separated IMB codes..."></textarea>
+          <textarea id="imb-input" placeholder="Paste code"></textarea>
 
           <div style="height: 12px"></div>
           <label for="file-input">Upload CSV or TXT</label>
@@ -31,14 +30,6 @@
         </div>
 
         <div class="card">
-          <label for="source-input">Source Platform (optional)</label>
-          <input id="source-input" type="text" placeholder="e.g. Mailroom v2" />
-
-          <div style="height: 12px"></div>
-          <label for="note-input">Note (optional)</label>
-          <input id="note-input" type="text" placeholder="Batch note" />
-
-          <div style="height: 16px"></div>
           <div class="callout" id="summary">Waiting for IMBs...</div>
           <div style="height: 8px"></div>
           <div id="warnings" class="meta"></div>

@@ -7,37 +7,36 @@
     <link rel="stylesheet" href="assets/app.css" />
   </head>
   <body data-page="batch">
-    <main>
-      <header>
-        <div class="brand">
-          <span class="brand-badge">IMB BATCH</span>
-          <div>
-            <h1 id="batch-title">Batch</h1>
-            <p id="batch-meta">Loading...</p>
-          </div>
+    <div class="container">
+      <header class="document-header">
+        <div class="profile-avatar">IMB</div>
+        <div class="profile-info">
+          <h1 id="batch-title" class="document-title">Batch</h1>
+          <p id="batch-meta" class="document-subtitle">Loading...</p>
         </div>
-        <div class="actions">
+        <div class="header-actions">
           <button id="refresh-btn">Refresh</button>
-          <button id="copy-btn" class="secondary">Copy Share Link</button>
+          <button id="copy-btn">Copy Share Link</button>
         </div>
       </header>
 
-      <section class="panel">
-        <div class="flex" style="justify-content: space-between">
-          <div>
+      <h2 class="section-title">Batch Items</h2>
+      <section>
+        <div class="controls-row">
+          <div style="flex: 1; min-width: 220px">
             <label for="search-input">Search or filter</label>
             <input id="search-input" type="text" placeholder="Filter by IMB or status" />
           </div>
           <div id="admin-panel" class="callout" style="display: none">
             Admin mode enabled. Overrides will use your stored admin key.
-            <button id="clear-admin" class="secondary" style="margin-left: 12px">Clear</button>
+            <button id="clear-admin" style="margin-left: 12px">Clear</button>
           </div>
         </div>
         <div id="table-wrap"></div>
       </section>
 
       <div class="footer" id="status-message"></div>
-    </main>
+    </div>
 
     <script type="module" src="assets/app.js"></script>
   </body>
